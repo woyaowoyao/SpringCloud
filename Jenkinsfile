@@ -16,12 +16,12 @@ pipeline {
         stage('StartBuildUserService') {
             steps {
             	sh "pwd"
-            	dir('./user-service/user') {
+            	//dir('./user-service/user') {
             		sh "chmod +x *.sh"
             		//sh 'mvn clean package dockerfile:build'
             		sh "./restart.sh"
             		//sh 'mvn spring-boot:run'
-            	}
+            	//}
             	println env.WORKSPACE
 			    dir("${env.WORKSPACE}/sp/user-service/user"){
 				    sh "pwd"
